@@ -66,6 +66,25 @@
         }
       }
     },
+    "ddbkkk": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "kkk",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "kkk",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "kkk",
+            "KeyType": "HASH"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST"
+      }
+    },
     "kcliprod": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -123,7 +142,29 @@
               }
             }
           ]
-        }
+        },
+        "Policies": [
+          {
+            "PolicyName": "kcliprodPolicy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:Scan"
+                  ],
+                  "Resource": {
+                    "Fn::GetAtt": [
+                      "ddbkkk",
+                      "Arn"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     "apigTestAPIMyLambdaPOSTPermission": {
@@ -146,7 +187,7 @@
         "Principal": "apigateway.amazonaws.com"
       }
     },
-    "apigTestAPIDeployment1594908633586": {
+    "apigTestAPIDeployment1594909564109": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": "0itznun7w3",

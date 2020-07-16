@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "kcliprod.js",
         "cursor": {
-          "lineNumber": 2,
-          "column": 5
+          "lineNumber": 1,
+          "column": 1
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -67,6 +67,24 @@
           "stageDeploymentId": "ly8mfu",
           "mode": 1
         }
+      },
+      "ddbkkk": {
+        "name": "ddbkkk",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 0,
+          "table": {
+            "arn": "",
+            "name": "kkk",
+            "partitionKey": "kkk",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 0
+          }
+        }
       }
     },
     "customTemplate": {
@@ -86,7 +104,15 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "nodejs",
+          "version": "2.644.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -98,7 +124,7 @@
     "language": "nodejs",
     "platformRegions": {},
     "sigmaVersion": "1.4.1.1",
-    "lastSave": 1594908622626
+    "lastSave": 1594909557564
   },
   "VCS_STATE": {
     "provider": "GitHub",
